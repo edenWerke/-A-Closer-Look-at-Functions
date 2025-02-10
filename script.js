@@ -84,16 +84,62 @@
  //abstaction does not care the detail of the function 
 
 // OPPOSITE OF CALL-BACK FUNCTION
-const  greet=function(greeting){
-    return function(name){
-        console.log(`${greeting}  ${name}`)
-    };
-};
-const greetingHey=greet('hey')
-greetingHey("edu")
-greetingHey("delu")
-const  greetArr=greeting=> name=>
-       console.log(`${greeting}  ${name}`)
+// const  greet=function(greeting){
+//     return function(name){
+//         console.log(`${greeting}  ${name}`)
+//     };
+// };
+// const greetingHey=greet('hey')
+// greetingHey("edu")
+// greetingHey("delu")
+// const  greetArr=greeting=> name=>
+//        console.log(`${greeting}  ${name}`)
     
-;
-greetArr('hello')('shkorina')
+// ;
+// greetArr('hello')('shkorina')
+
+const ethAirline = {
+    airline: "Ethiopia",
+    flightCode: 'MQX',
+    booking: [],
+    
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.flightCode} ${flightNum}`);
+        this.booking.push({ flight: `${this.flightCode}${flightNum}`, name });
+    },
+};
+
+
+ethAirline.book(230,'eden werke');
+ethAirline.book(250,'delina')
+
+const eurowings={
+
+    name:'Eurowings',
+    flightCode:'Ew',
+    booking:[]
+}
+
+const book=ethAirline.book
+//DOES NNOT WORK 
+// book(23,'hannaj');
+book.call(eurowings,23,'Hanna william');
+console.log(eurowings)
+
+book.call(ethAirline,45,'hyab')
+console.log(ethAirline)
+const  swiss={
+    name:'swiss air lines',
+    flightCode:'LX',
+    booking:[]
+}
+book.call(swiss,55,'tsion')
+console.log(swiss)
+
+// Apply method
+const flightData=[583,"george Copper"];
+book.apply(swiss,flightData)
+console.log(swiss)
+// more recommended
+book.call(swiss,...flightData)
+console.log(swiss)
