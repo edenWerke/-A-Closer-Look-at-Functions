@@ -50,35 +50,50 @@
 // checkIn(flight,eden) 
 
 // Lower-order-level-function
-const oneWord=function(str){
-    return str.replace(/ /g,'').toLowerCase();
+// const oneWord=function(str){
+//     return str.replace(/ /g,'').toLowerCase();
 
-}
-const upperFirstWord=function(str){
+// }
+// const upperFirstWord=function(str){
 
-    const[first,...others]=str.split('');
-    return[first.toUpperCase(),...others].join(' ');
-}
+//     const[first,...others]=str.split('');
+//     return[first.toUpperCase(),...others].join(' ');
+// }
 
-//  Higher-order-function
-const transformer= function (str,fn){
+// //  Higher-order-function
+// const transformer= function (str,fn){
 
-    console.log(`Transformed string :${fn(str)}`);
-    console.log(`Original string: ${fn(str)}`);
+//     console.log(`Transformed string :${fn(str)}`);
+//     console.log(`Original string: ${fn(str)}`);
     
-    console.log(`Transformed by: ${fn.name}`)
+//     console.log(`Transformed by: ${fn.name}`)
 
-}
-transformer('JavaScript is the best!',upperFirstWord)
-transformer('JavaScript is the best!',oneWord)
-//JS uses callbacks all the time
-const high5=function()
- {
-    console.log('hi five bro')
- }
- // telling the add eventlistener what to do because he has not idea of by it self
- document.body.addEventListener('click',high5)
- ['jonas', 'martha', 'adam'].forEach(high5);
+// }
+// transformer('JavaScript is the best!',upperFirstWord)
+// transformer('JavaScript is the best!',oneWord)
+// //JS uses callbacks all the time
+// const high5=function()
+//  {
+//     console.log('hi five bro')
+//  }
+//  // telling the add eventlistener what to do because he has not idea of by it self
+//  document.body.addEventListener('click',high5)
+//  ['jonas', 'martha', 'adam'].forEach(high5);
 
  //uses of callback
  //abstaction does not care the detail of the function 
+
+// OPPOSITE OF CALL-BACK FUNCTION
+const  greet=function(greeting){
+    return function(name){
+        console.log(`${greeting}  ${name}`)
+    };
+};
+const greetingHey=greet('hey')
+greetingHey("edu")
+greetingHey("delu")
+const  greetArr=greeting=> name=>
+       console.log(`${greeting}  ${name}`)
+    
+;
+greetArr('hello')('shkorina')
