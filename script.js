@@ -162,4 +162,14 @@ ethAirline.buyPlanes=function(){
     console.log(this.planes);
 }
 ethAirline.buyPlanes();
-document.querySelector('.buy').addEventListener('click',ethAirline.buyPlanes.bind(ethAirline))
+document.querySelector('.buy').addEventListener
+('click',ethAirline.buyPlanes.bind(ethAirline ))
+
+//Partial application
+// using bind gives us brand new function
+const addTax=(rate,value)=>value+value *rate;
+console.log(addTax(0.1,200)) 
+
+const addVat=addTax.bind(null,0.23)
+console.log(addVat(5000));
+console.log(addVat(300))
