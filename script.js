@@ -115,7 +115,7 @@ ethAirline.book(250,'delina')
 
 const eurowings={
 
-    name:'Eurowings',
+    airline:'Eurowings',
     flightCode:'Ew',
     booking:[]
 }
@@ -135,7 +135,7 @@ const  swiss={
 }
 book.call(swiss,55,'tsion')
 console.log(swiss)
-
+  
 // Apply method
 const flightData=[583,"george Copper"];
 book.apply(swiss,flightData)
@@ -143,3 +143,23 @@ console.log(swiss)
 // more recommended
 book.call(swiss,...flightData)
 console.log(swiss)
+
+const bookEw=book.bind(eurowings)
+const bookEt=book.bind(ethAirline)  
+ 
+ bookEw(23,'edenWerke')
+bookEt(90,'sara mehari ')
+
+const bookEW23=book.bind(eurowings,23,)
+bookEW23('jonas haile')
+bookEW23('martha')
+
+
+ethAirline.planes=500;
+ethAirline.buyPlanes=function(){
+    console.log(this );
+    this.planes++;
+    console.log(this.planes);
+}
+ethAirline.buyPlanes();
+document.querySelector('.buy').addEventListener('click',ethAirline.buyPlanes.bind(ethAirline))
