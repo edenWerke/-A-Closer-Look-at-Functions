@@ -167,9 +167,26 @@ document.querySelector('.buy').addEventListener
 
 //Partial application
 // using bind gives us brand new function
-const addTax=(rate,value)=>value+value *rate;
-console.log(addTax(0.1,200)) 
+// const addTax=(rate,value)=>value+value *rate;
+// console.log(addTax(0.1,200)) 
 
-const addVat=addTax.bind(null,0.23)
-console.log(addVat(5000));
-console.log(addVat(300))
+// const addVat=addTax.bind(null,0.23)
+// console.log(addVat(900));
+// console.log(addVat(300))
+
+
+// const hello=function(sayHey){
+//     return function(name){
+//         console.log(`${sayHey} ${name}`)
+//     }
+// }
+// const hey=HELLO('HEY PEOPLE')
+// hey(" specfic to edu  ")
+
+
+const myTax=function(valuee){
+    return function(taxx){
+        console.log(valuee + valuee *taxx)
+    }
+}
+myTax(500)(0.23)
