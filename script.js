@@ -184,9 +184,51 @@ document.querySelector('.buy').addEventListener
 // hey(" specfic to edu  ")
 
 
-const myTax=function(valuee){
-    return function(taxx){
-        console.log(valuee + valuee *taxx)
-    }
-}
-myTax(500)(0.23)
+// const myTax=function(valuee){
+//     return function(taxx){
+//         console.log(valuee + valuee *taxx)
+//     }
+// }
+// myTax(500)(0.23)
+//  Challange one
+
+const poll = {
+    question: 'What is your favorite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+    answers: new Array(4).fill(0),
+
+
+// const registerNewAnswer = function() {
+//     alert(`What is your favorite programming language?
+//         0. JavaScript
+//         1. Python
+//         2. Rust
+//         3. C++`);
+
+//     const answer = prompt('Please enter the option number (0-3):');
+
+//     const answerIndex = Number(answer); // Use 'answer' instead of 'answers'
+//     if (answerIndex >= 0 && answerIndex < poll.answers.length) {
+//         poll.answers[answerIndex]++;
+//         alert(`Thank you for voting! You selected: ${poll.options[answerIndex]}`);
+//     } else {
+//         alert('Invalid option. Please enter a number between 0 and 3.');
+//     }
+// };
+
+// registerNewAnswer();
+// registerNewAnswers(){
+//      const answer=Number(
+//         prompt(`${this.question}\n ${this.options.join('\n')} \n(Write option number)`))=
+//      )
+// }
+registerNewAnswers(){
+    const answer = Number(
+        prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`
+    )
+    );
+
+  console.log(answer)
+},
+};
+poll.registerNewAnswers();
