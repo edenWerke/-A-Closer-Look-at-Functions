@@ -15,14 +15,7 @@
 // //    console.log(isPrivate)
 //    console.log(notPrivate)
 // this is no longer active
-const secureBooking=function(){
-    let passengerCount=0;
-// this can access the passangers count eventho the secureBooking finishs excuting 
-    return function(){
-        passengerCount ++;
-        console.log(`${passengerCount} passengers`)
-    };
-};
+//    
 //closure remebers a function at its birth place(securebook)
 // closure tay ygebr meslikum var   
 // closure makes connection with function even tho it loses its existance
@@ -32,8 +25,26 @@ const secureBooking=function(){
 // function is like person and closure is like backpack
 // closure are not tangable
 //we do not have to create closure manually
-const booker=secureBooking();
-booker();
-booker();
-booker(); 
-console.dir(booker)
+// const booker=secureBooking();
+// booker();
+// booker();
+// booker(); 
+// console.dir(booker)
+// Example on closure
+let f;
+const g=function(){
+    const a=23;
+    f=function(){
+        console.log(a*2)
+    }
+}
+const h=function(){
+    const b=3123;
+    f=function(){
+        console.log(b*2)
+    }
+}
+g();
+f();
+h();
+f();
