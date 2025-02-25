@@ -30,21 +30,42 @@
 // booker();
 // booker(); 
 // console.dir(booker)
-// Example on closure
-let f;
-const g=function(){
-    const a=23;
-    f=function(){
-        console.log(a*2)
-    }
-}
-const h=function(){
-    const b=3123;
-    f=function(){
-        console.log(b*2)
-    }
-}
-g();
-f();
-h();
-f();
+// // Example on closure
+// let f;
+// const g=function(){
+//     const a=23;
+//     f=function(){
+//         console.log(a*2)
+//     }
+// }
+// const h=function(){
+//     const b=3123;
+//     f=function(){
+//         console.log(b*2)
+//     }
+// }
+// g();
+// f();
+// h();
+// f();
+//Timer~
+// const boardPassengers= function(n,wait){
+//     const perGroup=n/3;
+  
+// setTimeout(function(){
+
+//     console.log(`we are now boarding all ${n} passengers`)
+//     console.log(`There are   3 Groups ,each with ${perGroup}   ` )
+// },1000)
+//     console.log(`will start boarding in ${wait} seconds`)
+// }
+// Challange 2
+(function(){
+    const header=document.querySelector('h1');
+    header.style.color='red'
+
+    
+    document.querySelector('body').addEventListener('click',function(){
+        header.style.color='blue'
+    })
+})();
